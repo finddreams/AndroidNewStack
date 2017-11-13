@@ -1,4 +1,4 @@
-package com.finddreams.androidnewstack;
+package com.finddreams.androidnewstack.presenter;
 
 import com.finddreams.androidnewstack.service.StockService;
 

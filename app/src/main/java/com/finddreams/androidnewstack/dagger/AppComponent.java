@@ -2,7 +2,7 @@ package com.finddreams.androidnewstack.dagger;
 
 import android.app.Application;
 
-import com.finddreams.androidnewstack.StockPresenter;
+import com.finddreams.androidnewstack.presenter.StockPresenter;
 
 import javax.inject.Singleton;
 
