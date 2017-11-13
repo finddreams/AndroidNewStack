@@ -2,6 +2,8 @@ package com.finddreams.androidnewstack.dagger;
 
 import android.app.Application;
 
+import com.finddreams.androidnewstack.StockPresenter;
+
 import javax.inject.Singleton;
 
 import dagger.Component;
@@ -17,5 +19,5 @@ import dagger.Component;
 )
 public interface AppComponent {
     void inject(Application app);
-
+    StockPresenter getStockPresenter();
 }
