@@ -1,5 +1,6 @@
 package com.finddreams.androidnewstack.dagger;
 
+import com.finddreams.androidnewstack.service.LivingService;
 import com.finddreams.androidnewstack.service.RestApiAdapter;
 import com.finddreams.androidnewstack.service.StockService;
 
@@ -20,5 +21,9 @@ public class AppModule {
     @Provides
     public StockService provideStockApi(Retrofit restAdapter) {
         return restAdapter.create(StockService.class);
+    }
+    @Provides
+    public LivingService provideLivingApi(Retrofit restAdapter) {
+        return restAdapter.create(LivingService.class);
     }
 }
