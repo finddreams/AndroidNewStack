@@ -6,6 +6,7 @@ import com.finddreams.androidnewstack.service.StockService;
 
 import javax.inject.Inject;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.http.Query;
 
@@ -15,7 +16,7 @@ import retrofit2.http.Query;
 
 public class LivingPresenter {
     private final LivingService api;
-    String key="";
+    String key="eeffc72fa23b19f82fff6192e95a24cb";
 
     @Inject
     public LivingPresenter(LivingService livingService) {
@@ -23,7 +24,8 @@ public class LivingPresenter {
     }
 
     public Call<WeatherBean>  getWeatherInfo(String cityname, String dtype,int format) {
-        Call<WeatherBean> weather = api.getWeather(key,cityname, dtype, format);
-        return weather;
+        OkHttpClient.Builder builder=new OkHttpClient.Builder();
+        OkHttpClient build = builder.build();
+        return api.getWeather(key,cityname, dtype, format);
     }
 }

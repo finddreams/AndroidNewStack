@@ -1,18 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.finddreams.androidnewstack.MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <!--变量-->
+        <variable
+            name="weather"
+            type="com.finddreams.androidnewstack.bean.WeatherBean" />
+        <!--导入-->
+        <import type="com.finddreams.androidnewstack.bean.User"/>
+        <variable
+            name="user"
+            type="com.finddreams.androidnewstack.bean.User" />
+        <!--变量-->
+        <variable
+            name="users"
+            type="java.util.List&lt;User&gt;"/>
+    </data>
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{weather.result.today.temperature}" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.name}" />
+        <TextView
+            android:id="@+id/tv_otherName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{users[1].name}" />
+    </LinearLayout>
+</layout>
