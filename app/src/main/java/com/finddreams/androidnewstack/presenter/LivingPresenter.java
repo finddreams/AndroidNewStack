@@ -16,7 +16,7 @@ import retrofit2.http.Query;
 
 public class LivingPresenter {
     private final LivingService api;
-    String key="eeffc72fa23b19f82fff6192e95a24cb";
+    String key="";
 
     @Inject
     public LivingPresenter(LivingService livingService) {

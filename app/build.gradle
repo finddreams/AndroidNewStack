@@ -72,5 +72,8 @@ dependencies {
     //依赖库
     compile 'com.google.protobuf:protobuf-java:3.1.0'
     compile 'com.google.protobuf:protoc:3.1.0'
+    //稳定版
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
     implementation project(':module_user')
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
 }
