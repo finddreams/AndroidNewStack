@@ -1,16 +1,15 @@
 package com.finddreams.androidnewstack;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
-import com.finddreams.androidnewstack.bean.User;
 import com.finddreams.androidnewstack.bean.WeatherBean;
 import com.finddreams.androidnewstack.databinding.ActivityMainBinding;
+import com.finddreams.module_user.UserActivity;
 
 import java.util.ArrayList;
 
@@ -26,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.tvName.setTextColor(getResources().getColor(R.color.colorAccent));
-        binding.tvOtherName.setTextColor(getResources().getColor(R.color.colorPrimary));
         initData();
     }
 
@@ -55,14 +52,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 //        weatherBeanCall.cancel();
-        ArrayList<User> users=new ArrayList<>();
-        User user=new User("liuxiang",18);
-        User user2=new User("finddreams",20);
-        users.add(user);
-        users.add(user2);
-        binding.setUsers(users);
-        binding.setUser(user);
-//        user.name="";
-    }
 
+    }
+    public void openuser(View view){
+        startActivity(new Intent(this,UserActivity.class));
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding.unbind();
+    }
 }

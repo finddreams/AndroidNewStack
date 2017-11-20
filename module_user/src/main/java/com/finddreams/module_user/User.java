@@ -1,4 +1,4 @@
-package com.finddreams.androidnewstack.bean;
+package com.finddreams.module_user;
 
 /**
  * Created by lx on 17-11-17.
